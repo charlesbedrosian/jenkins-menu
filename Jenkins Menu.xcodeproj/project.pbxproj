@@ -92,7 +92,7 @@
 		4B69520A16EC917900FB3D4D /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD63670D166888E1009278DB /* Growl.framework */; };
 		4B69520B16EC918200FB3D4D /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BD63670D166888E1009278DB /* Growl.framework */; };
 		4B69520C16EC91CF00FB3D4D /* JMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CE8C8158DC6D0001BA10E /* JMAppDelegate.m */; };
-		BD6367041667FF74009278DB /* Jenkins Menu.iconset in Resources */ = {isa = PBXBuildFile; fileRef = BD6367031667FF74009278DB /* Jenkins Menu.iconset */; };
+		4BD989481984DBC200A95BF9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BD989471984DBC200A95BF9 /* Images.xcassets */; };
 		BD63670816681E68009278DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BD63670616681E68009278DB /* Localizable.strings */; };
 		BD63670A16686E42009278DB /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = BD63670916686E42009278DB /* Growl Registration Ticket.growlRegDict */; };
 		BD63670E166888E1009278DB /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD63670D166888E1009278DB /* Growl.framework */; };
@@ -207,7 +207,7 @@
 		4B0CE8E8158DC6D1001BA151 /* weather_lightning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weather_lightning.png; path = Resources/weather_lightning.png; sourceTree = "<group>"; };
 		4B0CE8E8158DC6D1001BA154 /* weather_lightning@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "weather_lightning@2x.png"; path = "Resources/weather_lightning@2x.png"; sourceTree = "<group>"; };
 		4B2C7500170F2E4100F8B0FF /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Frameworks/Sparkle.framework; sourceTree = "<group>"; };
-		BD6367031667FF74009278DB /* Jenkins Menu.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = "Jenkins Menu.iconset"; sourceTree = "<group>"; };
+		4BD989471984DBC200A95BF9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BD63670716681E68009278DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BD63670916686E42009278DB /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; name = "Growl Registration Ticket.growlRegDict"; path = "Resources/Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		BD63670D166888E1009278DB /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
@@ -281,7 +281,6 @@
 		4B0CE8A6158DC6D0001BA10E = {
 			isa = PBXGroup;
 			children = (
-				BD6367031667FF74009278DB /* Jenkins Menu.iconset */,
 				4B0CE8BB158DC6D0001BA10E /* Jenkins Menu */,
 				4B0CE8D8158DC6D1001BA10E /* Jenkins MenuTests */,
 				4B0CE8B4158DC6D0001BA10E /* Frameworks */,
@@ -333,6 +332,7 @@
 				1929B154A3D771D43E614DBE /* JMKeychainManager.m */,
 				1929BE8C3290107F7DAC5621 /* JMKeychainManager.h */,
 				1929BE658F0A899FEF18EA96 /* AFNetworking */,
+				4BD989471984DBC200A95BF9 /* Images.xcassets */,
 			);
 			path = "Jenkins Menu";
 			sourceTree = "<group>";
@@ -482,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B0CE8C0158DC6D0001BA10E /* InfoPlist.strings in Resources */,
+				4BD989481984DBC200A95BF9 /* Images.xcassets in Resources */,
 				4B0CE8C6158DC6D0001BA10E /* Credits.rtf in Resources */,
 				4B0CE8CC158DC6D1001BA10E /* MainMenu.xib in Resources */,
 				4B0CE8E8158DC6D1001BA127 /* fire.png in Resources */,
@@ -492,7 +493,6 @@
 				4B0CE8E8158DC6D1001BA14E /* disconnect.png in Resources */,
 				4B0CE8E8158DC6D1001BA152 /* weather_lightning.png in Resources */,
 				4B0CE8E8158DC6D1001BA155 /* weather_lightning@2x.png in Resources */,
-				BD6367041667FF74009278DB /* Jenkins Menu.iconset in Resources */,
 				BD63670816681E68009278DB /* Localizable.strings in Resources */,
 				BD63670A16686E42009278DB /* Growl Registration Ticket.growlRegDict in Resources */,
 				1929BBED8002399172469533 /* sparkle-pub.pem in Resources */,
@@ -679,6 +679,7 @@
 		4B0CE8E4158DC6D1001BA10E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -697,6 +698,7 @@
 		4B0CE8E5158DC6D1001BA10E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
