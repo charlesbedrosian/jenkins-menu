@@ -14,6 +14,7 @@
 		1929B1642122ED9AA073E9C3 /* AFPropertyListRequestOperation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1929B9B6123BB0F9F17877A1 /* AFPropertyListRequestOperation.h */; };
 		1929B16CBEC1B9DF626CC5A0 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1929BCFC7FE6D3E516D1ABD6 /* AFHTTPRequestOperation.m */; };
 		1929B19377F594714AEEA045 /* JMAppDelegateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1929B754F60A01DB7BB083E4 /* JMAppDelegateTest.m */; };
+		1929B2739647305E17BDB282 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1929B004E9B75F208C86A256 /* XCTest.framework */; };
 		1929B2BEB7A0B032CFC2C3B7 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1929BC3DEE6A7E94801FF204 /* AFImageRequestOperation.m */; };
 		1929B37D386248C80C347501 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1929B0601D3C09F86AD2D1B0 /* AFHTTPClient.m */; };
 		1929B3D6AA7395A228EAC448 /* JMJenkins.m in Sources */ = {isa = PBXBuildFile; fileRef = 1929BBC49202F6CF5B2519F6 /* JMJenkins.m */; };
@@ -66,7 +67,6 @@
 		4B0CE8C6158DC6D0001BA10E /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CE8C4158DC6D0001BA10E /* Credits.rtf */; };
 		4B0CE8C9158DC6D0001BA10E /* JMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CE8C8158DC6D0001BA10E /* JMAppDelegate.m */; };
 		4B0CE8CC158DC6D1001BA10E /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CE8CA158DC6D1001BA10E /* MainMenu.xib */; };
-		4B0CE8D4158DC6D1001BA10E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0CE8D3158DC6D1001BA10E /* SenTestingKit.framework */; };
 		4B0CE8D5158DC6D1001BA10E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B0CE8B5158DC6D0001BA10E /* Cocoa.framework */; };
 		4B0CE8DD158DC6D1001BA10E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CE8DB158DC6D1001BA10E /* InfoPlist.strings */; };
 		4B0CE8E0158DC6D1001BA10E /* JMBaseTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B0CE8DF158DC6D1001BA10E /* JMBaseTestCase.m */; };
@@ -137,6 +137,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1929B004E9B75F208C86A256 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1929B0601D3C09F86AD2D1B0 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		1929B0D063F16726BCC6F088 /* JMJenkinsJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMJenkinsJob.m; sourceTree = "<group>"; };
 		1929B114A3163CA62849DE77 /* JMTrustedHostManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMTrustedHostManagerTest.m; sourceTree = "<group>"; };
@@ -193,7 +194,6 @@
 		4B0CE8C8158DC6D0001BA10E /* JMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMAppDelegate.m; sourceTree = "<group>"; };
 		4B0CE8CB158DC6D1001BA10E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		4B0CE8D2158DC6D1001BA10E /* Jenkins MenuTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jenkins MenuTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B0CE8D3158DC6D1001BA10E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4B0CE8DA158DC6D1001BA10E /* Jenkins MenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jenkins MenuTests-Info.plist"; sourceTree = "<group>"; };
 		4B0CE8DC158DC6D1001BA10E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4B0CE8DE158DC6D1001BA10E /* JMBaseTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMBaseTestCase.h; sourceTree = "<group>"; };
@@ -230,11 +230,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B69520A16EC917900FB3D4D /* Growl.framework in Frameworks */,
-				4B0CE8D4158DC6D1001BA10E /* SenTestingKit.framework in Frameworks */,
 				4B0CE8D5158DC6D1001BA10E /* Cocoa.framework in Frameworks */,
 				4B094FF4168110D900D1C02B /* OCHamcrest.framework in Frameworks */,
 				4B094FF5168110D900D1C02B /* OCMockito.framework in Frameworks */,
 				4B0F07D416FDFB1D00E67C05 /* Security.framework in Frameworks */,
+				1929B2739647305E17BDB282 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,8 +306,8 @@
 				4B094FF3168110D900D1C02B /* OCMockito.framework */,
 				BD63670D166888E1009278DB /* Growl.framework */,
 				4B0CE8B5158DC6D0001BA10E /* Cocoa.framework */,
-				4B0CE8D3158DC6D1001BA10E /* SenTestingKit.framework */,
 				1929B17F9334050E9C2C6355 /* Security.framework */,
+				1929B004E9B75F208C86A256 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = JM;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 4B0CE8AB158DC6D0001BA10E /* Build configuration list for PBXProject "Jenkins Menu" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -638,7 +638,6 @@
 		4B0CE8E1158DC6D1001BA10E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -663,7 +662,6 @@
 		4B0CE8E2158DC6D1001BA10E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
