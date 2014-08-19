@@ -32,6 +32,11 @@ typedef enum {
     JMJenkinsTotalStateRed,
 } JMJenkinsJobsTotalState;
 
+typedef enum {
+    JMJenkinsJobFilterInclude,
+    JMJenkinsJobFilterIgnore
+} JMJenkinsJobFilter;
+
 static const int qHttpStatusUnknown = -1;
 static const int qHttpStatusOk = 200;
 static const int qHttpStatusBadRequest = 400;
@@ -55,6 +60,7 @@ static NSString *const qJenkinsHttpResponseErrorKey = @"HttpResponseFailedErrorK
 @property (readonly) NSArray *jobs;
 @property (readonly) NSString *potentialHostToTrust;
 @property NSArray *blacklistItems;
+@property JMJenkinsJobFilter blacklistItemsFilter;
 
 @property id <JMJenkinsDelegate> delegate;
 @property JMTrustedHostManager *trustedHostManager;

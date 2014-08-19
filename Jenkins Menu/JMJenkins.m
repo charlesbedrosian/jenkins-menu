@@ -119,6 +119,7 @@ static NSString *const qJenkinsXmlApiPath = @"/api/xml";
         _mutableJobs = [[NSMutableArray alloc] init];
         _filteredJobs = [[NSMutableArray alloc] init];
         _blacklistItems = [[NSArray alloc] init];
+        _blacklistItemsFilter = JMJenkinsJobFilterIgnore;
     }
 
     return self;
@@ -211,7 +212,9 @@ static NSString *const qJenkinsXmlApiPath = @"/api/xml";
         if ([[childNode name] isEqualToString:@"job"]) {
             JMJenkinsJob *job = [self jobsFromXmlNode:childNode];
             [self.mutableJobs addObject:job];
-            if (![self.blacklistItems containsObject:job.name]) {
+            if (self.blacklistItemsFilter == JMJenkinsJobFilterIgnore && ![self.blacklistItems containsObject:job.name]) {
+                [self.filteredJobs addObject:job];
+            } else if (self.blacklistItemsFilter == JMJenkinsJobFilterInclude && [self.blacklistItems containsObject:job.name]) {
                 [self.filteredJobs addObject:job];
             }
             return;
@@ -355,10 +358,16 @@ static NSString *const qJenkinsXmlApiPath = @"/api/xml";
 - (NSUInteger)countState:(JMJenkinsJobState)jobState {
     NSUInteger count = 0;
     for (JMJenkinsJob *job in self.jobs) {
-        if ([self.blacklistItems containsObject:job.name]) {
+        if (self.blacklistItemsFilter == JMJenkinsJobFilterIgnore &&
+                [self.blacklistItems containsObject:job.name]) {
             continue;
         }
-
+        
+        if (self.blacklistItemsFilter == JMJenkinsJobFilterInclude &&
+            ![self.blacklistItems containsObject:job.name]) {
+            continue;
+        }
+        
         if (job.state == jobState) {
             count++;
         }

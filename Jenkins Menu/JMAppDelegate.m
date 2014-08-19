@@ -115,6 +115,7 @@ static const NSInteger qTableViewNoSelectedRow = -1;
 
     self.jenkins.blacklistItems = ([self.userDefaults objectForKey:qUserDefaultsBlacklistItemsKey]);
     self.tempBlacklistItems = [self.jenkins.blacklistItems mutableCopy];
+    self.blacklistItemsFilter = self.jenkins.blacklistItemsFilter;
     [self.blacklistTableView reloadData];
 }
 
@@ -264,10 +265,22 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     [self.preferencesWindow orderOut:self];
 }
 
+- (void)updateInterfaceForFilterType {
+    self.blacklistItemSegmentedControl.selectedSegment = (NSInteger)self.blacklistItemsFilter;
+    if (self.blacklistItemsFilter == JMJenkinsJobFilterIgnore) {
+        [self.includeExcludeLabel setStringValue:@"jobs listed here will be ignored"];
+    } else {
+        [self.includeExcludeLabel setStringValue:@"only jobs listed here will be included"];
+    }
+    //TODO: update other labels for include/exclude
+}
+
 - (IBAction)manageBlacklistAction:(id)sender {
     self.tempBlacklistItems = [self.jenkins.blacklistItems mutableCopy];
     [self.blacklistTableView selectRowIndexes:nil byExtendingSelection:NO];
     [self.blacklistTableView reloadData];
+    
+    [self updateInterfaceForFilterType];
 
     [NSApp beginSheet:self.blacklistWindow modalForWindow:self.preferencesWindow modalDelegate:self didEndSelector:@selector(didEndSheet:returnCode:contextInfo:) contextInfo:NULL];
 }
@@ -609,6 +622,11 @@ static const NSInteger qTableViewNoSelectedRow = -1;
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
     [sheet orderOut:self];
+}
+
+- (IBAction)jobFilterToggleAction:(id)sender {
+    self.blacklistItemsFilter = (JMJenkinsJobFilter)self.blacklistItemSegmentedControl.selectedSegment;
+    [self updateInterfaceForFilterType];
 }
 
 @end

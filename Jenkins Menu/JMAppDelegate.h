@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Growl/Growl.h>
 #import "JMJenkinsDelegate.h"
+#import "JMJenkins.h"
 
 @class JMTrustedHostManager;
 @class JMKeychainManager;
@@ -17,6 +18,7 @@ static NSString *const qUserDefaultsUrlKey = @"jenkinsUrl";
 static NSString *const qUserDefaultsIntervalKey = @"interval";
 static NSString *const qUserDefaultsSecuredKey = @"fds";    // ups...
 static NSString *const qUserDefaultsBlacklistItemsKey = @"blacklistItems";
+static NSString *const qUserDefaultsBlacklistItemsFilterKey = @"blacklistItemsFilter";
 static NSString *const qUserDefaultsShowDisabledJobs = @"showDisabledJobs";
 static const NSInteger qBlacklistItemAddSegment = 0;
 static const NSInteger qBlacklistItemRemoveSegment = 1;
@@ -37,9 +39,11 @@ static const NSInteger qBlacklistItemRemoveSegment = 1;
 @property (weak) IBOutlet NSButton *storeInKeychanCheckbox;
 
 @property NSMutableArray *tempBlacklistItems;
+@property JMJenkinsJobFilter blacklistItemsFilter;
 @property (unsafe_unretained) IBOutlet NSWindow *blacklistWindow;
 @property (weak) IBOutlet NSTableView *blacklistTableView;
 @property (weak) IBOutlet NSSegmentedControl *blacklistItemSegmentedControl;
+@property (weak) IBOutlet NSTextField *includeExcludeLabel;
 
 @property BOOL showDisabledJobs;
 
@@ -67,5 +71,7 @@ static const NSInteger qBlacklistItemRemoveSegment = 1;
 - (IBAction)credentialsOkAction:(id)sender;
 - (IBAction)credentialsCancelAction:(id)sender;
 - (IBAction)storeInKeychainToggleAction:(id)sender;
+
+- (IBAction)jobFilterToggleAction:(id)sender;
 
 @end
