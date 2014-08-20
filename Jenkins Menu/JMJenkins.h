@@ -33,8 +33,8 @@ typedef enum {
 } JMJenkinsJobsTotalState;
 
 typedef enum {
-    JMJenkinsJobFilterInclude,
-    JMJenkinsJobFilterIgnore
+    JMJenkinsJobFilterIgnore,
+    JMJenkinsJobFilterInclude    
 } JMJenkinsJobFilter;
 
 static const int qHttpStatusUnknown = -1;

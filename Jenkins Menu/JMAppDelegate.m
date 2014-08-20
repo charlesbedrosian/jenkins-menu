@@ -624,8 +624,8 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     [sheet orderOut:self];
 }
 
-- (IBAction)jobFilterToggleAction:(id)sender {
-    self.blacklistItemsFilter = (JMJenkinsJobFilter)self.blacklistItemSegmentedControl.selectedSegment;
+- (IBAction)jobFilterToggleAction:(NSSegmentedControl *)sender {
+    self.blacklistItemsFilter = (JMJenkinsJobFilter)(sender.selectedSegment);
     [self updateInterfaceForFilterType];
 }
 
