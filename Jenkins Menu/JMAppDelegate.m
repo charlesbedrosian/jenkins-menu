@@ -115,7 +115,8 @@ static const NSInteger qTableViewNoSelectedRow = -1;
 
     self.jenkins.blacklistItems = ([self.userDefaults objectForKey:qUserDefaultsBlacklistItemsKey]);
     self.tempBlacklistItems = [self.jenkins.blacklistItems mutableCopy];
-    self.blacklistItemsFilter = self.jenkins.blacklistItemsFilter;
+    self.blacklistItemsFilter = (JMJenkinsJobFilter)[self.userDefaults integerForKey:qUserDefaultsBlacklistItemsFilterKey];
+    [self updateInterfaceForFilterType];
     [self.blacklistTableView reloadData];
 }
 
@@ -260,19 +261,19 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     self.jenkins.blacklistItems = [self.tempBlacklistItems mutableCopy];
     [self.userDefaults setObject:self.jenkins.blacklistItems forKey:qUserDefaultsBlacklistItemsKey];
     [self.userDefaults setBool:self.showDisabledJobs forKey:qUserDefaultsShowDisabledJobs];
+    [self.userDefaults setInteger:(NSInteger)self.blacklistItemsFilter forKey:qUserDefaultsBlacklistItemsFilterKey];
     [self updateJenkinsStatus];
 
     [self.preferencesWindow orderOut:self];
 }
 
 - (void)updateInterfaceForFilterType {
-    self.blacklistItemSegmentedControl.selectedSegment = (NSInteger)self.blacklistItemsFilter;
+    [self.blacklistItemSegmentedControl setSelected:YES forSegment:(NSInteger)self.blacklistItemsFilter];
     if (self.blacklistItemsFilter == JMJenkinsJobFilterIgnore) {
         [self.includeExcludeLabel setStringValue:@"jobs listed here will be ignored"];
     } else {
         [self.includeExcludeLabel setStringValue:@"only jobs listed here will be included"];
     }
-    //TODO: update other labels for include/exclude
 }
 
 - (IBAction)manageBlacklistAction:(id)sender {
@@ -622,6 +623,10 @@ static const NSInteger qTableViewNoSelectedRow = -1;
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
     [sheet orderOut:self];
+}
+
+- (void)windowWillBeginSheet:(NSNotification *)notification {
+    
 }
 
 - (IBAction)jobFilterToggleAction:(NSSegmentedControl *)sender {
