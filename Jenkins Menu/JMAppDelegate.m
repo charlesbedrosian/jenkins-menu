@@ -116,6 +116,7 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     self.jenkins.blacklistItems = ([self.userDefaults objectForKey:qUserDefaultsBlacklistItemsKey]);
     self.tempBlacklistItems = [self.jenkins.blacklistItems mutableCopy];
     self.blacklistItemsFilter = (JMJenkinsJobFilter)[self.userDefaults integerForKey:qUserDefaultsBlacklistItemsFilterKey];
+    self.jenkins.blacklistItemsFilter = self.blacklistItemsFilter;
     [self updateInterfaceForFilterType];
     [self.blacklistTableView reloadData];
 }
@@ -259,6 +260,7 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     }];
 
     self.jenkins.blacklistItems = [self.tempBlacklistItems mutableCopy];
+    self.jenkins.blacklistItemsFilter = self.blacklistItemsFilter;
     [self.userDefaults setObject:self.jenkins.blacklistItems forKey:qUserDefaultsBlacklistItemsKey];
     [self.userDefaults setBool:self.showDisabledJobs forKey:qUserDefaultsShowDisabledJobs];
     [self.userDefaults setInteger:(NSInteger)self.blacklistItemsFilter forKey:qUserDefaultsBlacklistItemsFilterKey];
