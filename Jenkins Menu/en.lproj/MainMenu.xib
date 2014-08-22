@@ -2369,7 +2369,7 @@
 							<string key="NSFrame">{{79, 61}, {223, 14}}</string>
 							<reference key="NSSuperview" ref="460681975"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="679630755"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1535</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="696551077">
@@ -3341,14 +3341,6 @@
 					<int key="connectionID">1885</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">blacklistItemSegmentedControl</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="665714762"/>
-					</object>
-					<int key="connectionID">1888</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
 						<string key="label">blacklistCancelAction:</string>
 						<reference key="source" ref="976324537"/>
@@ -3371,6 +3363,14 @@
 						<reference key="destination" ref="923502591"/>
 					</object>
 					<int key="connectionID">2051</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">blacklistItemSegmentedControl</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="711742301"/>
+					</object>
+					<int key="connectionID">2061</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -7205,7 +7205,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">2051</int>
+			<int key="maxID">2061</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

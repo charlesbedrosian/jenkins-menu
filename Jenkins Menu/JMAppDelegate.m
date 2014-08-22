@@ -281,9 +281,8 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     [self.blacklistTableView selectRowIndexes:nil byExtendingSelection:NO];
     [self.blacklistTableView reloadData];
     
-    [self updateInterfaceForFilterType];
-
     [NSApp beginSheet:self.blacklistWindow modalForWindow:self.preferencesWindow modalDelegate:self didEndSelector:@selector(didEndSheet:returnCode:contextInfo:) contextInfo:NULL];
+    [self updateInterfaceForFilterType];    
 }
 
 - (IBAction)blacklistItemAction:(id)sender {
@@ -623,10 +622,6 @@ static const NSInteger qTableViewNoSelectedRow = -1;
 
 - (void)didEndSheet:(NSWindow *)sheet returnCode:(NSInteger)returnCode contextInfo:(void *)contextInfo {
     [sheet orderOut:self];
-}
-
-- (void)windowWillBeginSheet:(NSNotification *)notification {
-    
 }
 
 - (IBAction)jobFilterToggleAction:(NSSegmentedControl *)sender {
