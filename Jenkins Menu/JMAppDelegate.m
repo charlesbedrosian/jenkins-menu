@@ -13,11 +13,18 @@
 #import "JMTrustedHostManager.h"
 #import "NSMenuItem+Q.h"
 #import "JMKeychainManager.h"
+#import "Blink1.h"
 
 static NSString *const DEFAULT_URL_VALUE = @"http://ci.jruby.org/api/xml";
 static NSTimeInterval const qDefaultInterval = 5 * 60;
 
 static const NSInteger qTableViewNoSelectedRow = -1;
+
+@interface JMAppDelegate()
+
+@property (strong) Blink1 *blink1;
+
+@end
 
 @implementation JMAppDelegate {
 }
@@ -120,6 +127,8 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     self.jenkins.blacklistItemsFilter = self.blacklistItemsFilter;
     [self updateInterfaceForFilterType];
     [self.blacklistTableView reloadData];
+    
+    [self setupLight];
 }
 
 #pragma mark JMJenkinsDelegate
@@ -651,4 +660,11 @@ static const NSInteger qTableViewNoSelectedRow = -1;
         NSLog(@"Set LED to blue");
     }    
 }
+
+- (void)setupLight {
+    self.blink1 = [[Blink1 alloc] init];      // set up blink(1) library
+    [self.blink1 enumerate];
+    [self.blink1 fadeToRGBstr:@"#ff0000" atTime:0.3];
+}
+
 @end
