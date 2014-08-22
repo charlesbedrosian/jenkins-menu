@@ -16,6 +16,7 @@
 
 static NSString *const DEFAULT_URL_VALUE = @"http://ci.jruby.org/api/xml";
 static NSTimeInterval const qDefaultInterval = 5 * 60;
+
 static const NSInteger qTableViewNoSelectedRow = -1;
 
 @implementation JMAppDelegate {
@@ -156,6 +157,8 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     [self updateJobsMenuItem:self.jenkins.jobs];
     [self showNotifications];
     [self.statusMenuItem setTitle:NSLocalizedString(@"StatusSuccess", @"")];
+    
+    [self updateLight];
 }
 
 - (void)jenkins:(JMJenkins *)jenkins forbidden:(id)userInfo {
@@ -469,6 +472,7 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     NSString *templateText = @"<span style=\"font-family: Lucida Grande; font-size: 9pt; color: %@;\">%@</span>";
     NSMutableString *htmlAsString = [[NSMutableString alloc] init];
     NSString *imageName = @"thumb_up";
+    
 
     if (yellowCount > 0) {
         imageName = @"weather_lightning";
@@ -631,4 +635,20 @@ static const NSInteger qTableViewNoSelectedRow = -1;
     [self updateInterfaceForFilterType];
 }
 
+
+- (void)updateLight {
+    JMJenkinsJobsTotalState state = [self.jenkins totalState];
+    if (state == JMJenkinsJobStateGreen) {
+        NSLog(@"Set LED to green");
+    }
+    if (state == JMJenkinsJobStateRed) {
+        NSLog(@"Set LED to red");
+    }
+    if (state == JMJenkinsJobStateYellow) {
+        NSLog(@"Set LED to yellow");
+    }
+    if (state == JMJenkinsJobStateUnknown) {
+        NSLog(@"Set LED to blue");
+    }    
+}
 @end

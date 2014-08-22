@@ -97,6 +97,10 @@
 		BD63670A16686E42009278DB /* Growl Registration Ticket.growlRegDict in Resources */ = {isa = PBXBuildFile; fileRef = BD63670916686E42009278DB /* Growl Registration Ticket.growlRegDict */; };
 		BD63670E166888E1009278DB /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD63670D166888E1009278DB /* Growl.framework */; };
 		BD63670F1668899B009278DB /* Growl.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = BD63670D166888E1009278DB /* Growl.framework */; };
+		C3F9459B19A6EA18009B2A37 /* Blink1.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F9459319A6EA18009B2A37 /* Blink1.m */; };
+		C3F945A319A706D2009B2A37 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F945A219A706D2009B2A37 /* IOKit.framework */; };
+		C3F945AC19A706E4009B2A37 /* blink1-lib.c in Sources */ = {isa = PBXBuildFile; fileRef = C3F945A519A706E4009B2A37 /* blink1-lib.c */; };
+		C3F945AD19A706E4009B2A37 /* hid.c in Sources */ = {isa = PBXBuildFile; fileRef = C3F945AA19A706E4009B2A37 /* hid.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -211,6 +215,16 @@
 		BD63670716681E68009278DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		BD63670916686E42009278DB /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; explicitFileType = text.plist.xml; fileEncoding = 4; name = "Growl Registration Ticket.growlRegDict"; path = "Resources/Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		BD63670D166888E1009278DB /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Growl.framework; path = Frameworks/Growl.framework; sourceTree = "<group>"; };
+		C3F9459319A6EA18009B2A37 /* Blink1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blink1.m; sourceTree = "<group>"; };
+		C3F9459A19A6EA18009B2A37 /* Blink1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blink1.h; sourceTree = "<group>"; };
+		C3F945A219A706D2009B2A37 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		C3F945A519A706E4009B2A37 /* blink1-lib.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "blink1-lib.c"; sourceTree = "<group>"; };
+		C3F945A619A706E4009B2A37 /* blink1-lib-lowlevel-hiddata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "blink1-lib-lowlevel-hiddata.h"; sourceTree = "<group>"; };
+		C3F945A719A706E4009B2A37 /* blink1-lib-lowlevel-hidapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "blink1-lib-lowlevel-hidapi.h"; sourceTree = "<group>"; };
+		C3F945A819A706E4009B2A37 /* usbconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = usbconfig.h; sourceTree = "<group>"; };
+		C3F945A919A706E4009B2A37 /* hidapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hidapi.h; sourceTree = "<group>"; };
+		C3F945AA19A706E4009B2A37 /* hid.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hid.c; sourceTree = "<group>"; };
+		C3F945AB19A706E4009B2A37 /* blink1-lib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "blink1-lib.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F945A319A706D2009B2A37 /* IOKit.framework in Frameworks */,
 				BD63670E166888E1009278DB /* Growl.framework in Frameworks */,
 				4B0CE8B6158DC6D0001BA10E /* Cocoa.framework in Frameworks */,
 				1929BA75582CCE8616ED87F2 /* Security.framework in Frameworks */,
@@ -301,6 +316,7 @@
 		4B0CE8B4158DC6D0001BA10E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3F945A219A706D2009B2A37 /* IOKit.framework */,
 				4B2C7500170F2E4100F8B0FF /* Sparkle.framework */,
 				4B094FF2168110D900D1C02B /* OCHamcrest.framework */,
 				4B094FF3168110D900D1C02B /* OCMockito.framework */,
@@ -315,6 +331,7 @@
 		4B0CE8BB158DC6D0001BA10E /* Jenkins Menu */ = {
 			isa = PBXGroup;
 			children = (
+				C3F9459219A6EA18009B2A37 /* blink */,
 				4B0CE8C7158DC6D0001BA10E /* JMAppDelegate.h */,
 				4B0CE8C8158DC6D0001BA10E /* JMAppDelegate.m */,
 				4B0CE8CA158DC6D1001BA10E /* MainMenu.xib */,
@@ -407,6 +424,30 @@
 				4B0CE8E8158DC6D1001BA13B /* fire@2x.png */,
 			);
 			name = 32;
+			sourceTree = "<group>";
+		};
+		C3F9459219A6EA18009B2A37 /* blink */ = {
+			isa = PBXGroup;
+			children = (
+				C3F945A419A706E4009B2A37 /* blink-lib */,
+				C3F9459A19A6EA18009B2A37 /* Blink1.h */,
+				C3F9459319A6EA18009B2A37 /* Blink1.m */,
+			);
+			path = blink;
+			sourceTree = "<group>";
+		};
+		C3F945A419A706E4009B2A37 /* blink-lib */ = {
+			isa = PBXGroup;
+			children = (
+				C3F945A519A706E4009B2A37 /* blink1-lib.c */,
+				C3F945A619A706E4009B2A37 /* blink1-lib-lowlevel-hiddata.h */,
+				C3F945A719A706E4009B2A37 /* blink1-lib-lowlevel-hidapi.h */,
+				C3F945A819A706E4009B2A37 /* usbconfig.h */,
+				C3F945A919A706E4009B2A37 /* hidapi.h */,
+				C3F945AA19A706E4009B2A37 /* hid.c */,
+				C3F945AB19A706E4009B2A37 /* blink1-lib.h */,
+			);
+			path = "blink-lib";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,12 +593,15 @@
 				1929B37D386248C80C347501 /* AFHTTPClient.m in Sources */,
 				1929B51C58A5A88089966352 /* AFXMLRequestOperation.m in Sources */,
 				1929B16CBEC1B9DF626CC5A0 /* AFHTTPRequestOperation.m in Sources */,
+				C3F945AD19A706E4009B2A37 /* hid.c in Sources */,
 				1929BC2811C806C74170CB48 /* AFJSONRequestOperation.m in Sources */,
 				1929B58EF32279EAC96C0599 /* AFImageRequestOperation.m in Sources */,
 				1929B4FC6C91893816F62284 /* AFURLConnectionOperation.m in Sources */,
 				1929BDC6D91C0E1822A2B896 /* UIImageView+AFNetworking.m in Sources */,
 				1929B9D5382C07A5E919FB82 /* AFPropertyListRequestOperation.m in Sources */,
 				1929BAD4E4742090900DD0EE /* AFNetworkActivityIndicatorManager.m in Sources */,
+				C3F945AC19A706E4009B2A37 /* blink1-lib.c in Sources */,
+				C3F9459B19A6EA18009B2A37 /* Blink1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +735,10 @@
 				GCC_PREFIX_HEADER = "Jenkins Menu/Jenkins Menu-Prefix.pch";
 				INFOPLIST_FILE = "Jenkins Menu/Jenkins Menu-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"-XClang",
+					"-DUSE_HIDAPI",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -709,6 +757,10 @@
 				GCC_PREFIX_HEADER = "Jenkins Menu/Jenkins Menu-Prefix.pch";
 				INFOPLIST_FILE = "Jenkins Menu/Jenkins Menu-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_CFLAGS = (
+					"-XClang",
+					"-DUSE_HIDAPI",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
